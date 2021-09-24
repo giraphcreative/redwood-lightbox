@@ -5,8 +5,8 @@
 $(document).ready(function() {
 
 	// cookie names
-	var cookie_one = 'redwood-n30hyEUJT5pZcnrM';
-	var cookie_two = 'redwood-bezXcSHdnNeIUF2i';
+	var cookie_one = 'redwood-JI1e4vIP193wm7Lp';
+	var cookie_two = 'redwood-IGukrM4QcGOByMjd';
 
 
 	// move the slideshow html to just before the closing body tag
