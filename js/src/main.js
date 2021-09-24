@@ -159,10 +159,10 @@ $(document).ready(function() {
 		// prevent default link behavior
         e.preventDefault();
 
-        // show the popup
-        $( '.ph-slideshow-container' ).show();
+		// show the popup
+		$( '.ph-slideshow-container' ).show();
 
-    });
+	});
 
 });
 
