@@ -178,7 +178,7 @@ $(document).ready(function() {
 
 
 	// add alternate way to re-show the popup if the user clicks a link with a certain id.
-	$( '#newwebsitemodal2021' ).on( 'click', function(e){
+	$( '.newwebsitemodal2021' ).on( 'click', function(e){
 
 		// prevent default link behavior
 		e.preventDefault();
