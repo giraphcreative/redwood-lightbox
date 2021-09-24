@@ -5,12 +5,36 @@
 $(document).ready(function() {
 
 	// cookie names
-	var cookie_one = 'redwood-jNIbNC7EnjGOn3lI';
-	var cookie_two = 'redwood-ntyzvEW4A0F5cqYn';
+	var cookie_one = 'redwood-n30hyEUJT5pZcnrM';
+	var cookie_two = 'redwood-bezXcSHdnNeIUF2i';
 
 
 	// move the slideshow html to just before the closing body tag
 	$(document.body).append( $('.ph-slideshow-container').detach() );
+
+
+
+	// --------------------------------
+	// functions
+	// --------------------------------
+
+	// keypress handler, feed it a key and a callback function
+	var keypress = function( key, callback ){
+
+		// track keyups on the body
+		$( 'body' ).on( 'keyup', function(e){
+
+			// if it matches the specified keycode
+			if ( e.keyCode == key ) {
+
+				// run the callback
+				callback();
+
+			}
+
+		});
+
+	}
 
 
 	// function to go to previous slide
@@ -75,85 +99,74 @@ $(document).ready(function() {
 	}
 
 
-	// keypress handler, feed it a key and a callback function
-	var keypress = function( key, callback ){
-
-		// track keyups on the body
-		$( 'body' ).on( 'keyup', function(e){
-
-			// if it matches the specified keycode
-			if ( e.keyCode == key ) {
-
-				// run the callback
-				callback();
-
-			}
-
-		});
-
-	}
-
-
-	// a function to open the slideshow.
+	// function to open the slideshow.
 	var open_slideshow = function() {
 
 		// show the slideshow
 		$( '.ph-slideshow-container' ).show();
 
-		// only if the slideshow is visible after the cookie check, should we bind these actions
-		if ( $( '.ph-slideshow-container').is(':visible') ) {
+	}
 
 
-			// previous slide arrow
-			$( '.ph-slideshow .prev' ).on( 'click', go_to_prev_slide );
+	// --------------------------------
+	// set up bindings
+	// --------------------------------
 
-			// keypress previous slide
-			keypress( 37, go_to_prev_slide );
+	// if the slideshow code exists in the page
+	if ( $( '.ph-slideshow-container' ).length > 0 ) {
+
+		// previous slide arrow
+		$( '.ph-slideshow .prev' ).on( 'click', go_to_prev_slide );
+
+		// keypress previous slide
+		keypress( 37, go_to_prev_slide );
 
 
-			// next slide arrow
-			$( '.ph-slideshow .next' ).on( 'click', go_to_next_slide );
+		// next slide arrow
+		$( '.ph-slideshow .next' ).on( 'click', go_to_next_slide );
 
-			// keypress next slide
-			keypress( 39, go_to_next_slide );
+		// keypress next slide
+		keypress( 39, go_to_next_slide );
 
 
-			// handle swipe events in both directions
-			$( '.ph-slideshow' ).swipe( {
-				swipe:function( event, direction, distance, duration, fingerCount, fingerData ) {
-					if ( direction == 'left' ) {
-						go_to_next_slide();
-					}
-					if ( direction == 'right' ) {
-						go_to_prev_slide();
-					}
+		// handle swipe events in both directions
+		$( '.ph-slideshow' ).swipe( {
+			swipe:function( event, direction, distance, duration, fingerCount, fingerData ) {
+				if ( direction == 'left' ) {
+					go_to_next_slide();
 				}
-			});
-
-
-			// close slideshow by click on container
-			$( '.ph-slideshow-container' ).on( 'click', function( event ){
-
-				// make sure that the click event target was the container and not the contents.
-				if ( $(event.target).is('.ph-slideshow-container') ) {
-
-					// close the slideshow
-					close_slideshow();
-
+				if ( direction == 'right' ) {
+					go_to_prev_slide();
 				}
+			}
+		});
 
-			});
 
-			// when the user clicks an x button
-			$( '.ph-slideshow-container .close' ).on( 'click', close_slideshow );
+		// close slideshow by click on container
+		$( '.ph-slideshow-container' ).on( 'click', function( event ){
 
-			// when the user presses the escape key
-			keypress( 27, close_slideshow );
+			// make sure that the click event target was the container and not the contents.
+			if ( $(event.target).is('.ph-slideshow-container') ) {
 
-		}
+				// close the slideshow
+				close_slideshow();
+
+			}
+
+		});
+
+		// when the user clicks an x button
+		$( '.ph-slideshow-container .close' ).on( 'click', close_slideshow );
+
+		// when the user presses the escape key
+		keypress( 27, close_slideshow );
 
 	}
 
+
+	// ---------------------------------------------------
+	// trigger the slideshow initially and on link click
+	// ---------------------------------------------------
 
 	// if the slideshow hasn't been shown and hidden twice already
 	if ( cookies.get( cookie_two ) == null ) {
