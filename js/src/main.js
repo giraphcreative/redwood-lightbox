@@ -157,7 +157,7 @@ $(document).ready(function() {
 	$( '#newwebsitemodal2021' ).on( 'click', function(e){
 
 		// prevent default link behavior
-        e.preventDefault();
+		e.preventDefault();
 
 		// show the popup
 		$( '.ph-slideshow-container' ).show();
