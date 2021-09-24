@@ -61,7 +61,7 @@ $(document).ready(function() {
 			// hide the slideshow
 			$( '.ph-slideshow-container' ).hide();
 
-        	// if the lightbox hasn't been shown once already
+			// if the lightbox hasn't been shown once already
 			if ( cookies.get( cookie_one ) == null ) {
 
 				// set a cookie saying it has been shown once
