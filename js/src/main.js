@@ -12,6 +12,7 @@ $(document).ready(function() {
 	// move the slideshow html to just before the closing body tag
 	$(document.body).append( $('.ph-slideshow-container').detach() );
 
+
 	// function to go to previous slide
 	var go_to_prev_slide = function() {
 			
@@ -157,7 +158,7 @@ $(document).ready(function() {
 	// if the slideshow hasn't been shown and hidden twice already
 	if ( cookies.get( cookie_two ) == null ) {
 
-		// open the slideshow
+		// open the slideshow on load
 		open_slideshow();
 
 	}
