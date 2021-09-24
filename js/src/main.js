@@ -94,7 +94,7 @@ $(document).ready(function() {
 
 
 	// a function to open the slideshow.
-	var slideshow_open = function() {
+	var open_slideshow = function() {
 
 		// show the slideshow
 		$( '.ph-slideshow-container' ).show();
@@ -158,7 +158,7 @@ $(document).ready(function() {
 	if ( cookies.get( cookie_two ) == null ) {
 
 		// open the slideshow
-		slideshow_open();
+		open_slideshow();
 
 	}
 
@@ -170,7 +170,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		// open the slideshow
-		slideshow_open();
+		open_slideshow();
 
 	});
 
