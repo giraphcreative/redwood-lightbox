@@ -157,6 +157,7 @@ $(document).ready(function() {
 	// if the slideshow hasn't been shown and hidden twice already
 	if ( cookies.get( cookie_two ) == null ) {
 
+		// open the slideshow
 		slideshow_open();
 
 	}
@@ -168,7 +169,7 @@ $(document).ready(function() {
 		// prevent default link behavior
 		e.preventDefault();
 
-		// show the popup
+		// open the slideshow
 		slideshow_open();
 
 	});
