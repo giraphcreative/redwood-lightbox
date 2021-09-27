@@ -5,8 +5,8 @@
 $(document).ready(function() {
 
 	// cookie names
-	var cookie_one = 'redwood-VhDi6wv3b8uTHWen';
-	var cookie_two = 'redwood-2ltfAjmRD83vzGJ2';
+	var cookie_one = 'redwood-MFyh5iwD31sKhpSn';
+	var cookie_two = 'redwood-ylgf50szpbOEpkTP';
 
 
 	// move the slideshow html to just before the closing body tag
@@ -75,6 +75,16 @@ $(document).ready(function() {
 		next_slide.addClass( 'visible' );
 
 	};
+
+
+	// function to return to the first slide
+	var go_to_start = function() {
+
+		// hide visible slide.
+		$( '.ph-slideshow .ph-slide.visible' ).removeClass( 'visible' );
+		$( '.ph-slideshow .ph-slide:first' ).addClass( 'visible' );
+
+	}
 
 
 	// function to close the slideshow
@@ -182,6 +192,9 @@ $(document).ready(function() {
 
 		// prevent default link behavior
 		e.preventDefault();
+
+		// go to first slide..
+		go_to_start();
 
 		// open the slideshow
 		open_slideshow();
