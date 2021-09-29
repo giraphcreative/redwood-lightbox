@@ -52,7 +52,7 @@ module.exports = function(grunt) {
             js: {
                 files: {
                     '<%= jsDir %>/main.js': [
-                        '<%= jsLibDir %>/jquery.cookie.min.js',
+                        '<%= jsLibDir %>/js-cookie.min.js',
                         '<%= jsLibDir %>/jquery.touchswipe.min.js',
                         '<%= jsSrcDir %>/main.js',
                     ]

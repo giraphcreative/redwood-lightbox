@@ -5,8 +5,8 @@
 $(document).ready(function() {
 
 	// cookie names
-	var cookie_one = 'redwood-MFyh5iwD31sKhpSn';
-	var cookie_two = 'redwood-ylgf50szpbOEpkTP';
+	var cookie_one = 'redwood-6DRtcdwHr4KXA4Y9';
+	var cookie_two = 'redwood-F2st8UiY5h9x2UVS';
 
 
 	// move the slideshow html to just before the closing body tag
@@ -94,15 +94,15 @@ $(document).ready(function() {
 		$( '.ph-slideshow-container' ).hide();
 
 		// if the lightbox hasn't been shown once already
-		if ( cookies.get( cookie_one ) == null ) {
+		if ( Cookies.get( cookie_one ) == null ) {
 
 			// set a cookie saying it has been shown once
-			cookies.set( cookie_one, 'true' );
+			Cookies.set( cookie_one, 'true', { expires: 30 });
 
 		} else {
 
 			// it's been shown once already, so set a second cookie when it's been shown twice
-			cookies.set( cookie_two, 'true' );
+			Cookies.set( cookie_two, 'true', { expires: 30 });
 			
 		}
 
@@ -179,7 +179,7 @@ $(document).ready(function() {
 	// ---------------------------------------------------
 
 	// if the slideshow hasn't been shown and hidden twice already
-	if ( cookies.get( cookie_two ) == null ) {
+	if ( Cookies.get( cookie_two ) == null ) {
 
 		// open the slideshow on load
 		open_slideshow();
