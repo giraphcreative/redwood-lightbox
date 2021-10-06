@@ -5,8 +5,8 @@
 $(document).ready(function() {
 
 	// cookie names
-	var cookie_one = 'redwood-6DRtcdwHr4KXA4Y9';
-	var cookie_two = 'redwood-F2st8UiY5h9x2UVS';
+	var cookie_one = 'redwood-JWPQBZq6BDHdz9q2';
+	var cookie_two = 'redwood-UQB8kD2ddMCnbqMX';
 
 
 	// move the slideshow html to just before the closing body tag
@@ -178,8 +178,11 @@ $(document).ready(function() {
 	// trigger the slideshow initially and on link click
 	// ---------------------------------------------------
 
+	// a variable that checks whether the string 'fuzeurl' is in the current url
+	var is_fuze = ( location.href.indexOf( 'fuzeurl' ) > 0 ? true : false );
+
 	// if the slideshow hasn't been shown and hidden twice already
-	if ( Cookies.get( cookie_two ) == null ) {
+	if ( Cookies.get( cookie_two ) == null && !is_fuze ) {
 
 		// open the slideshow on load
 		open_slideshow();
