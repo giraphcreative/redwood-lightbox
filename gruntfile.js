@@ -55,6 +55,10 @@ module.exports = function(grunt) {
                         '<%= jsLibDir %>/js-cookie.min.js',
                         '<%= jsLibDir %>/jquery.touchswipe.min.js',
                         '<%= jsSrcDir %>/main.js',
+                    ],
+                    '<%= jsDir %>/main-no-cookie.js': [
+                        '<%= jsLibDir %>/jquery.touchswipe.min.js',
+                        '<%= jsSrcDir %>/main-no-cookie.js',
                     ]
                 }
             }
